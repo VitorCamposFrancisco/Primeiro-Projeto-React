@@ -2,17 +2,36 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import HomePage from './pages/HomePage';
+import BookPage from './pages/BookPage';
+import MoviePage from './pages/MoviePage';
 import NavBarComponents from './components/NavBarComponents';
 import FooterComponents from './components/FooterComponet';
 import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.min.css';
-
+import {
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <HomePage/>
+  },
+  {
+    path: "/livro",
+    element: <BookPage/>
+  },
+  {
+    path: "/filme",
+    element: <MoviePage/>
+  },
+]);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <NavBarComponents/>
-    <HomePage/>
+    <RouterProvider router={router}/>
   </React.StrictMode>
 );
 

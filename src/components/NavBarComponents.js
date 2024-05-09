@@ -1,18 +1,20 @@
+import { Col, Row } from 'react-bootstrap';
 import '../Styles/custom.css';
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
 
 function NavBarComponents() {
-    return(
-        <Navbar expand="lg" className="fundoNav">
+  return (
+    <Navbar expand="lg" className="fundoNav">
       <Container fluid>
-        <Navbar.Brand href="#">
-            <img src='../images/logocine.png'>
-                
-            </img>
+        <Navbar.Brand href="/" className='ms-3 '>
+          <img src='../logoCine.png'
+            width="50"
+            height="50"
+            className="d-inline-block align-top"
+            alt="CineLivro Logo" />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
@@ -21,27 +23,19 @@ function NavBarComponents() {
             style={{ maxHeight: '100px' }}
             navbarScroll
           >
-            <Nav.Link href="#action1">Home</Nav.Link>
-            <Nav.Link href="#action2">Link</Nav.Link>
-            <NavDropdown title="Link" id="navbarScrollingDropdown">
-              <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
-              <NavDropdown.Item href="#action4">
-                Another action
-              </NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="#action5">
-                Something else here
-              </NavDropdown.Item>
-            </NavDropdown>
-            <Nav.Link href="#" disabled>
-              Link
-            </Nav.Link>
           </Nav>
-            <Button variant="outline-success">LOGIN</Button>
+          <Container>
+            <Row>
+              <Col ><Nav.Link className='text-light home ' href="/">Home</Nav.Link></Col>
+              <Col><Nav.Link className='text-light livro' href="/livro">Livros</Nav.Link></Col>
+              <Col><Nav.Link className='text-light filme' href="/filme"> Filmes</Nav.Link></Col>
+            </Row>
+          </Container>
+          <Button variant="outline-success">LOGIN</Button>
         </Navbar.Collapse>
       </Container>
     </Navbar>
-    )
+  )
 }
 
 export default NavBarComponents;
