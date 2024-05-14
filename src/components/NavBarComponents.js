@@ -30,8 +30,8 @@ function NavBarComponents() {
               <Col><Nav.Link className='text-light livro' href="/livro">Livros</Nav.Link></Col>
               <Col><Nav.Link className='text-light filme' href="/filme"> Filmes</Nav.Link></Col>
             </Row>
-          </Container>
-          <Button variant="outline-success">LOGIN</Button>
+          </Container>  
+          <Button variant="outline-light">LOGIN</Button>
         </Navbar.Collapse>
       </Container>
     </Navbar>
