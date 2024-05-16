@@ -4,8 +4,6 @@ import './index.css';
 import HomePage from './pages/HomePage';
 import BookPage from './pages/BookPage';
 import MoviePage from './pages/MoviePage';
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 import NavBarComponents from './components/NavBarComponents';
 import FooterComponents from './components/FooterComponet';
 import reportWebVitals from './reportWebVitals';

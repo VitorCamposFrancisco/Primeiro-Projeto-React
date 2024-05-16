@@ -23,14 +23,10 @@ function NavBarComponents() {
             style={{ maxHeight: '100px' }}
             navbarScroll
           >
+              <Nav.Link className='text-light ms-4' href="/">Home</Nav.Link>
+              <Nav.Link className='text-light ms-4' href="/livro">Livros</Nav.Link>
+              <Nav.Link className='text-light ms-4' href="/filme"> Filmes</Nav.Link>
           </Nav>
-          <Container>
-            <Row>
-              <Col ><Nav.Link className='text-light home ' href="/">Home</Nav.Link></Col>
-              <Col><Nav.Link className='text-light livro' href="/livro">Livros</Nav.Link></Col>
-              <Col><Nav.Link className='text-light filme' href="/filme"> Filmes</Nav.Link></Col>
-            </Row>
-          </Container>  
           <Button variant="outline-light">LOGIN</Button>
         </Navbar.Collapse>
       </Container>
