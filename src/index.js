@@ -6,6 +6,7 @@ import BookPage from './pages/BookPage';
 import MoviePage from './pages/MoviePage';
 import NavBarComponents from './components/NavBarComponents';
 import FooterComponents from './components/FooterComponet';
+import LoginPage  from './pages/LoginPage';
 import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {
@@ -24,6 +25,10 @@ const router = createBrowserRouter([
   {
     path: "/filme",
     element: <MoviePage/>
+  },
+  {
+    path: "/login",
+    element: <LoginPage/>
   },
 ]);
 

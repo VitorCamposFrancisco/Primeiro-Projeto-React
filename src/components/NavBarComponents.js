@@ -27,7 +27,7 @@ function NavBarComponents() {
               <Nav.Link className='text-light ms-4' href="/livro">Livros</Nav.Link>
               <Nav.Link className='text-light ms-4' href="/filme"> Filmes</Nav.Link>
           </Nav>
-          <Button variant="outline-light">LOGIN</Button>
+          <Button variant="outline-light" href="/login">LOGIN</Button>
         </Navbar.Collapse>
       </Container>
     </Navbar>
