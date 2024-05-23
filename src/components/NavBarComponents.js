@@ -7,7 +7,7 @@ import Navbar from 'react-bootstrap/Navbar';
 
 function NavBarComponents() {
   return (
-    <Navbar expand="lg" className="fundoNav">
+    <Navbar expand="lg" className="fundoNav fw-light">
       <Container fluid>
         <Navbar.Brand href="/" className='ms-3 '>
           <img src='../logoCine.png'

@@ -1,8 +1,37 @@
 import { Button, Card, Carousel, Col, Container, Row } from "react-bootstrap";
 import '../Styles/custom.css';
 import { useState } from 'react';
-
+import axios from "axios";
 function HomePage() {
+    let tipo ;
+    let tipo_label;
+    let titulo;
+    let sinopse;
+    let thumb;
+    let video;
+    let fav;
+    let valor;
+    let categoria;
+    let imagens; 
+ async function requisição(){
+    let response = await axios.get('http://143.198.156.185/api/home', {
+            "tipo": tipo,
+            "tipo_label": tipo_label,
+            "titulo": titulo,
+            "sinopse": sinopse,
+            "url_thumbnail": thumb,
+            "url_video": video,
+            "qtd_favoritos": fav,
+            "qtd-valor": valor,
+            "categoria": categoria,
+            "imagens": imagens
+        }).then(function (value) {
+
+        })
+            .catch(function (value) {
+                console.log(value);
+            });
+        }
 
     return (
         <div >
@@ -37,13 +66,13 @@ function HomePage() {
                 <h2 class="d-flex justify-content-center text-danger">Favoritos</h2>
             </Container>
             <Container>
-                <Carousel  className="ms-3 mt-5">
+                <Carousel className="ms-3 mt-5">
                     <Carousel.Item>
                         <Row>
                             <Col sm>
                                 <div >
                                     <Card style={{ width: '18rem' }}>
-                                        <Card.Img variant="top" src="../kong-P.jpg" />
+                                        <Card.Img variant="top" src={thumb.url_thumbnail} />
                                         <Card.Body>
                                             <Card.Title>Card Title</Card.Title>
                                             <Card.Text>

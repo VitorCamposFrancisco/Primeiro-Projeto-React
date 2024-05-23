@@ -7,12 +7,14 @@ import MoviePage from './pages/MoviePage';
 import NavBarComponents from './components/NavBarComponents';
 import FooterComponents from './components/FooterComponet';
 import LoginPage  from './pages/LoginPage';
+import RegisterPage from './pages/RegisterPage';
 import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -30,6 +32,10 @@ const router = createBrowserRouter([
     path: "/login",
     element: <LoginPage/>
   },
+  {
+    path: "/cadastro",
+    element: <RegisterPage/>
+  }
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

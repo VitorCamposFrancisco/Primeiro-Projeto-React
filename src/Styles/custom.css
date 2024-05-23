@@ -4,3 +4,12 @@
 .colorCarousel{
     color: #B71B1B;
 }
+.login{
+    width: 400px;
+    height: 500px;
+}
+.linnk{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
