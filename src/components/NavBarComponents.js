@@ -10,7 +10,7 @@ function NavBarComponents() {
     <Navbar expand="lg" className="fundoNav fw-light">
       <Container fluid>
         <Navbar.Brand href="/" className='ms-3 '>
-          <img src='../logoCine.png'
+          <img src='../logo.png'
             width="50"
             height="50"
             className="d-inline-block align-top"

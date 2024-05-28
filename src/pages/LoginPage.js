@@ -49,9 +49,9 @@ const LoginPage = () => {
     return (
         <div>
             <Container className="mt-5">
-                <Card className="shadow-lg  bg-body-tertiary  rounded position-absolute top-50 start-50 translate-middle login">
+                <Card className="shadow-lg  bg-body-light rounded position-absolute top-50 start-50 translate-middle login">
                     <Card.Header className="">
-                        <Card.Title className="text-danger text-center fw-light">FAÇA SEU LOGIN</Card.Title>
+                        <Card.Title className="text-danger text-center fw-light letraLogin">FAÇA SEU LOGIN</Card.Title>
                     </Card.Header>
                     <Card.Body>
                         <Form onSubmit={handleSubmit}>
