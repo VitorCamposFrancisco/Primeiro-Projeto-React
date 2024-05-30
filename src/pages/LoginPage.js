@@ -51,13 +51,13 @@ const LoginPage = () => {
             <Container className="mt-5">
                 <Card className="shadow-lg  bg-body-light rounded position-absolute top-50 start-50 translate-middle login">
                     <Card.Header className="">
-                        <Card.Title className="text-danger text-center fw-light letraLogin">FAÇA SEU LOGIN</Card.Title>
+                        <Card.Title className="text-danger text-center fw-bolder letraLogin">FAÇA SEU LOGIN</Card.Title>
                     </Card.Header>
                     <Card.Body>
                         <Form onSubmit={handleSubmit}>
                             <Row>
                                 <Form.Group as={Col} sm={12} md={12} lg={12} controlId="formBasicEmail">
-                                    <Form.Label>Email:</Form.Label>
+                                    <Form.Label >Email:</Form.Label>
                                     <Form.Control type="email" placeholder="Digite seu email" value={email} onChange={(e) => setEmail(e.target.value)} />
                                 </Form.Group>
                                 <Form.Group as={Col} controlId="formBasicPassword">
@@ -72,10 +72,11 @@ const LoginPage = () => {
                             {error && <Alert variant="danger">{error}</Alert>}
                             {success && <Alert variant="success">{success}</Alert>}
 
-                            <div class="d-grid gap-2">
+                            <div class="d-grid gap-2 mt-2">
                                 <Button variant="danger" type="submit">Login</Button>
                             </div>
                             <hr className="mt-4 border-black border-opacity-75"></hr>
+                            <p className="mt-4  text-body-tertiary text-center ">Não possui uma conta?</p>
                             <div class="linnk">
                                 <a className=" text-center mt-1 text-decoration-none " href="/cadastro">Criar uma conta</a>
                             </div>

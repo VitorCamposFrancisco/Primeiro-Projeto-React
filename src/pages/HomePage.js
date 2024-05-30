@@ -2,13 +2,26 @@ import { Button, Card, Carousel, Col, Container, Row } from "react-bootstrap";
 import '../Styles/custom.css';
 import { useEffect, useState } from 'react';
 import axios from "axios";
+import Slider from "react-slick";
 const HomePage = () => {
     let [filmes, setFilme] = useState([]);
+    let [livros, setLivros] = useState([]);
+    let [filmeslivros, setFilmesLivros] = useState([]);
 
     useEffect(() => {
 
         async function filmesLivros() {
             const filmes = await axios.get('http://143.198.156.185/api/home', {
+            }).then(function (value) {
+                setFilmesLivros(value.data);
+            })
+                .catch(function (value) {
+                    console.log(value);
+                });
+        }
+
+        async function filmes() {
+            const filmes = await axios.get('http://143.198.156.185/api/filmes', {
             }).then(function (value) {
                 setFilme(value.data);
             })
@@ -16,82 +29,63 @@ const HomePage = () => {
                     console.log(value);
                 });
         }
+
+        async function Livros() {
+            const livros = await axios.get('http://143.198.156.185/api/livros', {
+            }).then(function (value) {
+                setLivros(value.data);
+            })
+                .catch(function (value) {
+                    console.log(value);
+                });
+        }
+        filmes();
+        Livros();
         filmesLivros();
     });
 
-    const reduceCards = (acc, cur, index) => {
-        const groupIndex = Math.floor(index / 4);
-        if (!acc[groupIndex]) acc[groupIndex] = [];
-        acc[groupIndex].push(cur);
-        console.log(acc);
-        return acc;
+    const settings = {
+        className: "slider variable-width",
+        dots: true,
+        infinite: true,
+        centerMode: true,
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        variableWidth: true
     };
-
 
     return (
         <div >
             <Container className="mt-5 mb-5 carousel">
                 <Carousel s className="shadow-lg  bg-body-light mb-5 rounded">
                     {filmes.map((filme, index) => (
-                        <Carousel.Item>
-                            <img src={filme.imagens[2]} alt={filme.titulo} className="col-12"></img>
+                        <Carousel.Item key={index}>
+                            <img src={filme.imagens[1].url} alt={filme.titulo} className="col-12"></img>
                             <Carousel.Caption>
-                                <h3>{filme.title}</h3>
-                                <p>{filme.sinopse}</p>
+                                <h3>{filme.titulo}</h3>
+                                <p className="">{filme.sinopse}</p>
                             </Carousel.Caption>
                         </Carousel.Item>
                     ))}
                 </Carousel>
             </Container>
             <Container className="mt-5 position-relative shadow-lg p-1 fundo rounded">
-                <h2 class="d-flex justify-content-center text-light fw-light">FILMES</h2>
+                <h2 class="d-flex justify-content-center text-light fw-bolder">O que há de melhor por aqui!</h2>
             </Container>
-            <Container>
-                <Carousel className="shadow-lg  bg-body-light mb-5 rounded">
-                    {filmes.reduce(reduceCards, []).map((item, index) => (
-                        <Carousel.Item key={index}>
-                            {item.map((filme, index) => (
-                                <Card style={{ width: '17rem' }}>
-                                    <img src={filme.imagens[2]} alt={filme.titulo} className="col-12"></img>
-                                    <Carousel.Caption>
-                                        <h3>{filme.title}</h3>
-                                        <p>{filme.sinopse}</p>
-                                    </Carousel.Caption>
-                                </Card>
-                            ))}
+            <Container className="mt-5">
 
-                        </Carousel.Item>
-                    ))}
-                </Carousel>
-                <Container className="mt-5 position-relative shadow-lg p-1 fundo rounded">
-                    <h2 class="d-flex justify-content-center text-light fw-light">LIVROS</h2>
-                </Container>
-                <Carousel className="ms-3 mt-5 carrosel">
-                    <Carousel.Item>
-                        <Row>
-                            {filmes.map((filme, index) => (
-                                <Col sm>
-                                    <div >
-                                        <Card style={{ width: '17rem' }}>
-                                            <Card.Img variant="top" src={filme.url_thumbnail} alt={filme.titulo} className="col-12" />
-                                            <Card.Body>
-                                                <Card.Title>{filme.title}</Card.Title>
-                                                <Card.Text>
-                                                    aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-                                                </Card.Text>
-                                                <div className="verFilmes">
-                                                    <Button className="verFilmes" variant="primary">Ver filme</Button></div>
-                                            </Card.Body>
-                                        </Card>
-                                    </div>
-                                </Col>
-                            ))}
-                        </Row>
-                    </Carousel.Item>
+                <Slider {...settings} className="carouselInner " >
+                        {filmeslivros.map((filme) => (
+                            <div style={{padding: '10px'}}>
+                                <Card style={{ width: '15rem', marginLeft: '10px' }} >
+                                <Card.Img variant="top" src={filme.url_thumbnail} alt={filme.titulo} />
+                            </Card>
+                            </div>
+                        ))}
+                </Slider>
 
-                </Carousel>
             </Container>
-        </div>
+        </div >
     )
 }
 

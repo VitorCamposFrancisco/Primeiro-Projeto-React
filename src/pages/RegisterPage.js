@@ -53,7 +53,7 @@ const RegisterPage = () => {
             <Container className="mt-5">
                 <Card className="shadow-lg  bg-body-tertiary  rounded position-absolute top-50 start-50 translate-middle login ">
                     <Card.Header className="">
-                        <Card.Title className="text-danger text-center fw-light" >FAÇA SEU CADASTRO</Card.Title>
+                        <Card.Title className="text-danger text-center fw-bolder" >FAÇA SEU CADASTRO</Card.Title>
                     </Card.Header>
                     <Card.Body>
                         <Form onSubmit={handleSubmit}>
@@ -64,7 +64,7 @@ const RegisterPage = () => {
                                 </Form.Group>
                                 <Form.Group as={Col} sm={12} md={12} lg={12} controlId="formBasicEmail">
                                     <Form.Label className="mt-4">Email:</Form.Label>
-                                    <Form.Control type="email" placeholder="Registe seu email" value={email} onChange={(e) => setEmail(e.target.value)} />
+                                    <Form.Control type="email" placeholder="Registre seu email" value={email} onChange={(e) => setEmail(e.target.value)} />
                                 </Form.Group>
                                 <hr className="mt-4 border-black border-opacity-75"></hr>
                                 <Form.Group as={Col} sm={12} md={12} lg={12} controlId="formBasicPassword" >
@@ -81,6 +81,11 @@ const RegisterPage = () => {
 
                             <div class="d-grid gap-2">
                                 <Button variant="danger" type="submit">Cadastrar</Button>
+                            </div>
+                            <hr className="mt-4 border-black border-opacity-75"></hr>
+                            <p className="mt-4  text-body-tertiary text-center ">Já possui uma conta?</p>
+                            <div class="linnk">
+                                <a className=" text-center mt-1 text-decoration-none " href="/login">Log in</a>
                             </div>
                         </Form>
 
