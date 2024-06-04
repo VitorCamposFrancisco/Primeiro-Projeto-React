@@ -8,6 +8,7 @@ import MoviePage from './pages/MoviePage';
 import NavBarComponents from './components/NavBarComponents';
 import FooterComponents from './components/FooterComponet';
 import LoginPage  from './pages/LoginPage';
+import filme from './pages/FilmePage';
 import RegisterPage from './pages/RegisterPage';
 import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -17,6 +18,7 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
+import FilmePage from './pages/FilmePage';
 
 const router = createBrowserRouter([
   {
@@ -38,6 +40,10 @@ const router = createBrowserRouter([
   {
     path: "/cadastro",
     element: <RegisterPage/>
+  },
+  {
+    path: "/filme/:id",
+    element: <FilmePage/>
   }
 ]);
 

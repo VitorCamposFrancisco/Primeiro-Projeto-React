@@ -1,40 +1,57 @@
-.fundoNav{
+.fundoNav {
     background-color: #b71b1b96;
 }
-.colorCarousel{
+
+.colorCarousel {
     color: #b71b1b96;
 }
-.login{
+
+.login {
     width: 400px;
     height: 500px;
 }
-.letraLogin{
+
+.letraLogin {
     color: #b71b1b96;
 }
-.linnk{
+
+.linnk {
     align-items: center;
     justify-content: center;
     display: flex;
 }
-body{
+
+body {
     background-color: rgb(0, 0, 0) !important;
 }
 
-.carousel button{
+.carousel button {
     opacity: 0 !important;
 }
 
-.verFilmes button{
+.verFilmes button {
     opacity: 1 !important;
 }
-.linha{
+
+.linha {
     border: 5px;
 }
-.fundo{
+
+.fundo {
     background-color: #b71b1b96 !important;
 }
-.carouselInner img{
+.fundo2 {
+    background-color: #8b0505d5 !important;
+}
+
+.carouselInner img {
     height: 40vh;
     width: 100%;
-    
+}
+
+
+
+.imgx img {
+    background: rgb(0, 0, 0) !important;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.8336675734747023) 72%, rgba(0, 212, 255, 0) 100%) !important;
 }
