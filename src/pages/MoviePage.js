@@ -28,7 +28,34 @@ const MoviePage = () => {
         centerMode: true,
         slidesToShow: 4,
         slidesToScroll: 1,
-        variableWidth: true
+        variableWidth: true,
+
+        responsive: [
+            {
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 3,
+                    infinite: true,
+                    dots: true
+                }
+            },
+            {
+                breakpoint: 600,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 2,
+                    initialSlide: 2
+                }
+            },
+            {
+                breakpoint: 480,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 2
+                }
+            }
+        ]
     };
     return (
         <div >
@@ -53,8 +80,11 @@ const MoviePage = () => {
                 <Slider {...settings} className="carouselInner " >
                     {filmes.map((filme) => (
                         <div style={{ padding: '10px' }}>
-                            <Link to={"/filme/" + filme.id}>
-                                <Card style={{ width: '15rem', marginLeft: '10px' }} >
+                            <Link class="link-offset-2 link-underline link-underline-opacity-0" to={"/filme/" + filme.id}>
+                                <Card className="border border-0" style={{ width: '15rem', marginLeft: '10px' }} >
+                                    <div className="card-body bg-black text-danger text-center">
+                                        <h2 class=" card-title  fw-bold fs-5 text  mb-3">{filme.titulo} </h2>
+                                    </div>
                                     <Card.Img variant="top" src={filme.url_thumbnail} alt={filme.titulo} />
                                 </Card>
                             </Link>

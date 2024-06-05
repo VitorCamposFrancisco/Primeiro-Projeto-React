@@ -1,0 +1,45 @@
+import axios from "axios";
+import { useEffect, useState } from "react";
+import { Button, Card } from "react-bootstrap";
+import { useParams } from "react-router-dom";
+import '../Styles/custom.css';
+
+const LivroPage = () => {
+    const { id } = useParams();
+    const [livros, setLivro] = useState('');
+
+    useEffect(() => {
+        async function buscarLivro() {
+            const livros = axios.get(`http://143.198.156.185/api/livros/porid/${id}`).then(function (value) {
+                setLivro(value.data);
+            }).catch(function (value) {
+                console.log(value);
+            });
+
+        }
+        buscarLivro();
+
+    });
+    return (
+        <div className="container mt-5">
+            <div class="card mb-3 border-danger border-3">
+                <div className="card-body text-danger text-center">
+                    <h2 class=" card-title fw-bold fs-1 text ">{livros.titulo} </h2>
+                </div>
+                {
+                    livros.imagens && livros.imagens[1] && (
+                        <img src={livros.imagens[0].url} class="card-img" alt="..." />)
+                }
+
+                <div class="card-body   text-danger">
+                    <h6 class="card-title mt-3">Gênero: {livros.categoria}.</h6>
+                    <p class="card-text mt-3">{livros.sinopse}</p>
+                    <p class="card-text mt-3">{livros.video}</p>
+                    <p class="card-text mt-3"><small class="text-body-dark">Favoritos: {livros.qtd_favoritos}.</small></p>
+                    <p class="card-text mt-3"><small class="text-body-dark">Preço: R${livros.qtd_valor},00.</small></p>
+                </div>
+            </div>
+        </div>
+    )
+}
+export default LivroPage;

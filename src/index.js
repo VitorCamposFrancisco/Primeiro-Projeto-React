@@ -19,6 +19,7 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import FilmePage from './pages/FilmePage';
+import LivroPage from './pages/LivroPage';
 
 const router = createBrowserRouter([
   {
@@ -44,6 +45,10 @@ const router = createBrowserRouter([
   {
     path: "/filme/:id",
     element: <FilmePage/>
+  },
+  {
+    path: "/livro/:id",
+    element: <LivroPage/>
   }
 ]);
 
