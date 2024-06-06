@@ -55,3 +55,9 @@ body {
     background: rgb(0, 0, 0) !important;
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.8336675734747023) 72%, rgba(0, 212, 255, 0) 100%) !important;
 }
+
+.footer{
+    width: 100%;
+    height: 200px;
+    background-color: #b71b1b96;
+}

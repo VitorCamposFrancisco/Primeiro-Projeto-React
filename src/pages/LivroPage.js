@@ -22,8 +22,8 @@ const LivroPage = () => {
     });
     return (
         <div className="container mt-5">
-            <div class="card mb-3 border-danger border-3">
-                <div className="card-body text-danger text-center">
+            <div class="card mb-3 border border-0">
+                <div className="card-body bg-black text-danger text-center">
                     <h2 class=" card-title fw-bold fs-1 text ">{livros.titulo} </h2>
                 </div>
                 {
@@ -31,12 +31,15 @@ const LivroPage = () => {
                         <img src={livros.imagens[0].url} class="card-img" alt="..." />)
                 }
 
-                <div class="card-body   text-danger">
-                    <h6 class="card-title mt-3">Gênero: {livros.categoria}.</h6>
-                    <p class="card-text mt-3">{livros.sinopse}</p>
-                    <p class="card-text mt-3">{livros.video}</p>
-                    <p class="card-text mt-3"><small class="text-body-dark">Favoritos: {livros.qtd_favoritos}.</small></p>
-                    <p class="card-text mt-3"><small class="text-body-dark">Preço: R${livros.qtd_valor},00.</small></p>
+                <div class="card-body bg-black   text-danger">
+                    <label class="card-text fw-bold mt-3">Gênero:</label>
+                    <p class="card-text">{livros.categoria}.    </p>
+                    <label class="card-text fw-bold mt-2">Sinopse:</label>
+                    <p class="card-text ">{livros.sinopse}</p>
+                    <label class="card-text fw-bold mt-2">Trailer:</label>
+                    <p class="card-text"><a class="btn btn-outline-danger mt-2" href={livros.url_video}>Clique aqui e confira!</a></p>
+                    <p class="card-text mt-4"><small class="text-body-dark">Favoritos: {livros.qtd_favoritos}.</small></p>
+
                 </div>
             </div>
         </div>

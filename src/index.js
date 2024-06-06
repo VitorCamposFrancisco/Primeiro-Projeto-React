@@ -57,6 +57,7 @@ root.render(
   <React.StrictMode >
     <NavBarComponents/>
     <RouterProvider router={router}/>
+    <FooterComponents/>
   </React.StrictMode>
 );
 
