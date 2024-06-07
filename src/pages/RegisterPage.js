@@ -1,4 +1,6 @@
 import { Button, Card, Col, Container, Form, Row, Alert } from "react-bootstrap";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons'
 import '../Styles/custom.css';
 import React, { useState } from 'react';
 import axios from "axios";
@@ -73,7 +75,7 @@ const RegisterPage = () => {
                                             <Form.Label className="mt-2">Senha:</Form.Label>
                                             <div class="input-group mb-4">
                                                 <Form.Control type={mudar.type} placeholder="Crie sua senha" value={password} onChange={(e) => setPassword(e.target.value)} />
-                                                <button className="btn btn-outline-danger" type="button" onClick={mudarSenha}>{mudar.icon}</button>
+                                                <button className="btn btn-outline-danger" type="button" onClick={mudarSenha}><FontAwesomeIcon icon={faEye} /></button>
                                             </div>
                                         </Form.Group>
                                     </Row>

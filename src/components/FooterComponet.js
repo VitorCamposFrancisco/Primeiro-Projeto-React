@@ -19,7 +19,7 @@ function FooterComponents() {
                 <div className="container mt-5">
                 <hr class="border border-light border-1"></hr>
                 </div>
-                <p class="card-title text-light text-center fs-5 mt-5">developed by Vitor Campos</p>
+                <p class="card-title text-light text-center fs-5 mt-5 mb-5">developed by Vitor Campos</p>
             </div>
         </>
     )

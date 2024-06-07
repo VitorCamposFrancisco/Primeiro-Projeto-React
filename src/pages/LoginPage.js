@@ -1,5 +1,7 @@
 import { Button, Card, Col, Container, Form, Row, Alert } from "react-bootstrap";
 import '../Styles/custom.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons'
 import React, { useState } from 'react';
 import axios from "axios";
 
@@ -12,18 +14,18 @@ const LoginPage = () => {
 
     let [mudar, setMudar] = useState({
         "type": "password",
-        "icon": "fa-solid fa-eye"
+        "olho": "faEye"
     });
     function mudarSenha() {
         if (mudar.type) {
             setMudar({
                 "type": "",
-                "icon": "fa-solid fa-eye-slash"
+                "olho": "faEyeSlash"
             })
         } else {
             setMudar({
                 "type": "password",
-                "icon": "fa-solid fa-eye"
+                "olho": "faEye"
             })
         }
     }
@@ -66,7 +68,7 @@ const LoginPage = () => {
                                             <Form.Label className="mt-4">Senha:</Form.Label>
                                             <div class="input-group mb-4">
                                                 <Form.Control type={mudar.type} placeholder="Digite sua senha" value={password} onChange={(e) => setPassword(e.target.value)} />
-                                                <button className="btn btn-outline-danger" type="button" onClick={mudarSenha}>{mudar.icon}</button>
+                                                <button className="btn btn-outline-danger" type="button" onClick={mudarSenha}><FontAwesomeIcon icon={faEye} /></button>
                                             </div>
                                         </Form.Group>
                                     </Row>
